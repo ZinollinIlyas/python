@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" class="form">
+        <p class="form-field">
+            <label for="username">Username</label>
+            <input type="username" placeholder="Enter your username" autofocus name="username" id="username">
+        </p>
+        <p class="form-field">
+            <label for="password">Password</label>
+            <input type="password" placeholder="Enter your password" name="username" id="password">
+        </p>
+        <p class="form-field">
+            <label for="number">Number</label>
+            <input type="number" placeholder="Enter your number" autofocus name="number" id="number" min="10" max="100">
+        </p>
+        <p class="form-field">
+            <label for="email">Email</label>
+            <input type="email" placeholder="Enter your email" autofocus name="email" id="email">
+        </p>
+        <p class="form-field">
+            <label for="tel">Phone</label>
+            <input type="tel" placeholder="Enter your phone number" autofocus name="tel" id="tel">
+        </p>
+        <div class="checkboxes">
+            <p>Выберите производителя</p>
+            <div class="check">
+                <input type="radio" id="female" name="gender" checked>
+                <label for="female">Женский</label>
+            </div>
+            <div class="check">
+                <input type="radio" id="male" name="gender">
+                <label for="male">Мужской</label>
+            </div>
+        </div>
+        <p class="form-field">
+            <label for="week-day">Выберите день недели</label>
+            <select id="week-day">
+                <option value="">Понедельник</option>
+                <option value="" selected disabled>Вторник</option>
+                <option value="">Среда</option>
+            </select>
+        </p>
+        <input type="file">
+        <button type="submit">Send</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>

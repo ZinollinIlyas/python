@@ -1,0 +1,25 @@
+.form{
+    width: 600px;
+    margin: 0 auto;
+}
+.form-field label{
+    display: block;
+}
+.form-field input, .form-field select{
+    border: 1px solid green;
+    background: #fff;
+    color: #000;
+    font-size: 20px;
+    padding: 5px 10px;
+    width: 100%;
+    border-radius: 4px;
+}
+.form button{
+    border: none;
+    background: purple;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}

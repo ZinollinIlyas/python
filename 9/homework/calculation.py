@@ -1,0 +1,7 @@
+print("Enter your product")
+pruduct = input()
+print("Enter quantity")
+quantity = int(input())
+print("Enter price")
+price = int(input())
+print(f"{pruduct} | {quantity} = {quantity * price} тенге")

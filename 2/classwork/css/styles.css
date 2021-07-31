@@ -1,0 +1,24 @@
+body{
+    margin: 0;
+}
+.first-block{
+    height: 200px;
+    width: 50%;
+    background: red;
+    margin: 0;
+}
+.second_block{
+    height: 200px;
+    background: green;
+    width: 50%;
+    margin: 0;
+}
+.first_inline{
+    height: 200px;
+    width: 30%;
+    background: red;
+}
+.second_inline{
+    height: 200px;
+    width: 20%;
+}

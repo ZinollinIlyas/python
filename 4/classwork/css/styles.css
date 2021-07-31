@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    background: #fff;
+    font-family: arial, sans-serif;
+}
+.flex-container{
+    display: flex;
+    height: 1000px;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+.flex-item{
+    width: 200px;
+    height: 100px;
+    background: red;
+}
+.inner-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inner-flex-item{
+    width: 20%;
+    height: 40px;
+    background: green;
+}

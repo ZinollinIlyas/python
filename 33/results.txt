@@ -1,0 +1,12 @@
+1 Задание.
+Сайты:
+jut.su
+stackoverflow.com
+mangalib.me
+
+На jut.su и mangalib.me по IP не удается открыть сайт, выходит ошибка Error 1003 Ray ID: 672308c9ab3984a4 • 2021-07-21 08:24:41 UTC
+Direct IP access not allowed, так как эти страницы подключены к сети Cloudflare, которая блокирует прямой доступ по IP
+
+А при переходе на stackoverflow выдается такая ошибка: Fastly error: unknown domain: 151.101.1.69. Please check that this domain has been added to a service.
+и такая ошибка появляется для всех IP адресов которые показала команда nslookup (домен сайта)
+

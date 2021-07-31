@@ -1,0 +1,23 @@
+
+.unordered_list {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+  list-style-type: square;
+  color: #FF4656; /* 0 - f */
+  /* color: rgba(0, 0, 0, 0.5); /*0 - 255*/ 
+}
+.unordered_list ul {
+  padding-left: 20px;
+}
+.ordered_list {
+  list-style-type: disc;
+}
+
+.promo {
+  min-height: 500px;
+  background-image: url("../img/download.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}

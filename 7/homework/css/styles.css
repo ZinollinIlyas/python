@@ -1,0 +1,23 @@
+
+.action{
+    background: #F5F5F5;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 8px grey;
+}
+.action p{
+    margin-bottom: 0;
+}
+.action-btn{
+    width: 550px;
+    padding: 5px 0;
+    align-self: center;
+    text-align: center;
+    font-size: 20px;
+    border: 1px grey solid;
+    border-radius: 5px;
+    color: #000;
+}
+footer{
+    padding: 60px 0;
+}
