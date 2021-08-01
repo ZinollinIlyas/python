@@ -28,6 +28,7 @@ class HelloTCPServer(StreamRequestHandler):
         user_input_byte = parse_qs(request.body)
         print(user_input_byte)
         user_input = {key.decode(): val[0].decode() for key, val in user_input_byte.items()}
+        print(user_input)
         # numbers = []
         # if user_input != {}:
         #     numbers = user_input['numbers'].split(' ')
