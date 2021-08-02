@@ -27,14 +27,12 @@ class HelloTCPServer(StreamRequestHandler):
         request = Request(self.rfile)
         user_input_byte = parse_qs(request.body)
         user_input = {key.decode(): val[0].decode() for key, val in user_input_byte.items()}
-        print(self.secret_numbers)
         numbers = []
         if user_input != {}:
             numbers = user_input['numbers'].split(' ')
 
         int_list = map(int, numbers)
         int_numbers = list(int_list)
-        print(int_numbers)
 
         if request.method == "POST":
             self.response_body += self.guess_numbers(self.secret_numbers, int_numbers)
@@ -55,7 +53,7 @@ class HelloTCPServer(StreamRequestHandler):
     def guess_numbers(self, secret, actual):
         bulls = 0
         cows = 0
-        if len(secret) > len(actual) or len(actual) < 1:
+        if len(secret) > len(actual):
             return f"<p>Error, wrong input</p>".encode()
         else:
             for i in range(len(actual)):
@@ -65,8 +63,6 @@ class HelloTCPServer(StreamRequestHandler):
                     cows += 1
                 elif actual[i] > 10:
                     return f"<p>Numbers must be between 1 and 10</p>".encode()
-                else:
-                    return f"<p>Error, wrong input</p>".encode()
             return f"<p>Bulls: {bulls}, cows: {cows}".encode()
 
 
