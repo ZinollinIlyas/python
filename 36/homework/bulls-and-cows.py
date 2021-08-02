@@ -16,7 +16,7 @@ def generate_numbers(count=5):
 class HelloTCPServer(StreamRequestHandler):
     secret_numbers = generate_numbers()
     response_body = f'''
-            <p>Guess 4 numbers. Enter them separated with spaces:</p>
+            <p>Guess {len(secret_numbers)} numbers. Enter them separated with spaces:</p>
                 <form method="POST" action="/">
                     <input type="text" name="numbers" autocomplete="off"/>
                     <input type="submit" value="Send"/>
@@ -26,17 +26,18 @@ class HelloTCPServer(StreamRequestHandler):
     def handle(self):
         request = Request(self.rfile)
         user_input_byte = parse_qs(request.body)
-        print(user_input_byte)
         user_input = {key.decode(): val[0].decode() for key, val in user_input_byte.items()}
-        print(user_input)
-        # numbers = []
-        # if user_input != {}:
-        #     numbers = user_input['numbers'].split(' ')
-        #
-        # for number in numbers:
-        #     print(number)
-        # numbers = user_input['numbers'].split(' ')
-        # print(numbers)
+        print(self.secret_numbers)
+        numbers = []
+        if user_input != {}:
+            numbers = user_input['numbers'].split(' ')
+
+        int_list = map(int, numbers)
+        int_numbers = list(int_list)
+        print(int_numbers)
+
+        if request.method == "POST":
+            self.response_body += self.guess_numbers(self.secret_numbers, int_numbers)
 
         response_body_length = str(len(self.response_body))
 
@@ -51,8 +52,20 @@ class HelloTCPServer(StreamRequestHandler):
 
         self.wfile.write("\r\n".join(response).encode())
 
-    # def guess_numbers(self, secret, actual):
-    #     if len(secret) > len(actual) or not isinstance([number for number in actual], int)
+    def guess_numbers(self, secret, actual):
+        bulls = 0
+        cows = 0
+        if len(secret) > len(actual):
+            return f"<p>Error, wrong input</p>".encode()
+        else:
+            for i in range(len(actual)):
+                if actual[i] == secret[i]:
+                    bulls += 1
+                elif actual[i] in secret and actual[i] != secret[i]:
+                    cows += 1
+                elif actual[i] > 10:
+                    return f"<p>Numbers must be between 1 and 10</p>".encode()
+            return f"<p>Bulls: {bulls}, cows: {cows}".encode()
 
 
 class ThreadedTCPServer(ThreadingMixIn, TCPServer):
