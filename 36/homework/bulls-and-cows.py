@@ -55,7 +55,7 @@ class HelloTCPServer(StreamRequestHandler):
     def guess_numbers(self, secret, actual):
         bulls = 0
         cows = 0
-        if len(secret) > len(actual):
+        if len(secret) > len(actual) or len(actual) < 1:
             return f"<p>Error, wrong input</p>".encode()
         else:
             for i in range(len(actual)):
@@ -65,6 +65,8 @@ class HelloTCPServer(StreamRequestHandler):
                     cows += 1
                 elif actual[i] > 10:
                     return f"<p>Numbers must be between 1 and 10</p>".encode()
+                else:
+                    return f"<p>Error, wrong input</p>".encode()
             return f"<p>Bulls: {bulls}, cows: {cows}".encode()
 
 
