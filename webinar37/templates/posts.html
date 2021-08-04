@@ -1,0 +1,9 @@
+{% extends "templates/base.html" %}
+
+{% block title %}Posts{% endblock %}
+
+{% block content %}
+    {% with full = True %}
+        {% include "templates/includes/posts.html" %}
+    {% endwith %}
+{% endblock %}

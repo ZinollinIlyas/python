@@ -1,0 +1,16 @@
+{% extends "templates/base.html" %}
+
+{% block title %}Main Page{% endblock %}
+
+{% block content %}
+    {% if my_var %}
+        <h1>Hello!</h1>
+        <p>Variable: {{ my_var }} asdasd</p>
+    {% else %}
+        <h1>Variable value is not passed</h1>
+    {% endif %}
+
+    {% with posts = last_posts %}
+        {% include "templates/includes/posts.html" %}
+    {% endwith %}
+{% endblock %}
