@@ -3,7 +3,8 @@
 {% block title %}Main Page{% endblock %}
 
 {% block content %}
-    <form action="/click" method="GET">
+    <p>{{ counter }}</p>
+    <form action="/click" method="POST">
     <button type="submit">Click</button>
     </form>
 {% endblock %}

@@ -6,12 +6,14 @@ class Response:
     HTTP_BAR_REQUEST = 400
     HTTP_NOT_FOUND = 404
     HTTP_INTERNAL_SERVER_ERROR = 500
+    HTTP_MOVED_PERMANENTLY = 301
 
     MESSAGES = {
         HTTP_OK: "OK",
         HTTP_BAR_REQUEST: "Bad Request",
         HTTP_NOT_FOUND: "Not Found",
-        HTTP_INTERNAL_SERVER_ERROR: "Internal Server Error"
+        HTTP_INTERNAL_SERVER_ERROR: "Internal Server Error",
+        HTTP_MOVED_PERMANENTLY: "Moved permanently"
     }
 
     PROTOCOL = "HTTP/1.1"

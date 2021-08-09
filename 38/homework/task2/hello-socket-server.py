@@ -16,7 +16,7 @@ env = Environment(
 )
 
 router.get("/", ClickController, "get_click")
-router.get("/click?", ClickController, "count_click")
+router.post("/click", ClickController, "count_click")
 
 
 class HelloTCPServer(StreamRequestHandler):

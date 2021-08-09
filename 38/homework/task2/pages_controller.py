@@ -17,16 +17,14 @@ class ClickController(Controller):
         self.response.add_header("Content-Type", "text/html")
         self.response.add_header("Connection", "close")
         template = env.get_template("templates/index.html")
-        body = template.render()
+        body = template.render({"counter": ClickController.counter})
 
         self.response.set_body(body)
 
     def count_click(self):
         ClickController.counter += 1
-        body = ""
         self.response.add_header("Content-Type", "text/html")
         self.response.add_header("Connection", "close")
-        template = env.get_template("templates/click.html")
-        body = template.render({"counter": ClickController.counter})
+        self.response.add_header("Location", "/")
+        self.response.set_status(self.response.HTTP_MOVED_PERMANENTLY)
 
-        self.response.set_body(body)
